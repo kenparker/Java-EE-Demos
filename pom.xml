@@ -8,6 +8,7 @@
     <modules>
         <module>../JavaEE-Demo-JSF-CDI</module>
         <module>../JavaEE-Demo-JSF-MB-EJB</module>
+        <module>../My-Memo-App</module>
     </modules>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
