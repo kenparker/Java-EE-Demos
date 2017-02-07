@@ -16,7 +16,9 @@ public class MultiRequestsController extends HttpServlet{
     
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        logger.info("Info Message");
+        logger.info("Info Message1");
+        logger.info("Info Message2");
+        logger.debug("Debug Message");
     }
     
     
