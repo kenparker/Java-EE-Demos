@@ -9,8 +9,8 @@
         <module>../JavaEE-Demo-JSF-CDI</module>
         <module>../JavaEE-Demo-JSF-MB-EJB</module>
         <module>../My-Memo-App</module>
-    <module>MultiRequestsServletDemo</module>
-  </modules>
+        <module>LoggingServletDemo</module>
+    </modules>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
