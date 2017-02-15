@@ -10,6 +10,8 @@
         <module>../JavaEE-Demo-JSF-MB-EJB</module>
         <module>../My-Memo-App</module>
         <module>LoggingServletDemo</module>
+        <module>BeerAdvisorServletsAndJSPDemo</module>
+        <module>../MultiThreadingServletDemo</module>
     </modules>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
