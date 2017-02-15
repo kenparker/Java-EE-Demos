@@ -4,6 +4,7 @@ import com.maggioni.model.BeerExpert;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -15,7 +16,7 @@ public class BeerSelect extends HttpServlet {
 
     static private final Logger log = LoggerFactory.getLogger("root.Beer");
     private PrintWriter out;
-
+    
     @Override
     public void init() throws ServletException {
         log.info("Init startet");
@@ -25,14 +26,6 @@ public class BeerSelect extends HttpServlet {
     public void destroy() {
         log.info("destroy startet");
     }
-
-    @Override
-    public String getInitParameter(String name) {
-        log.info("getInitParameterc called");
-        String initParameter = super.getInitParameter(name);
-        return initParameter;
-    }
-
     
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -40,12 +33,13 @@ public class BeerSelect extends HttpServlet {
 
         BeerExpert beerExpert = new BeerExpert();
         List brands = beerExpert.getBrands(color);
+        log.info("BeerExpert Object : {}", beerExpert);
 
-        setupHtmlHeader(response);
-
-        for (Object brand : brands) {
-            out.println("<br> try : " + brand);
-        }
+        request.setAttribute("styles", brands);
+        
+        RequestDispatcher view = request.getRequestDispatcher("result.jsp");
+        view.forward(request, response);
+        
     }
 
     private void setupHtmlHeader(HttpServletResponse response) throws IOException {
@@ -68,5 +62,6 @@ public class BeerSelect extends HttpServlet {
         log.info("doPost called");
         processRequest(request, response);
     }
+
 
 }
